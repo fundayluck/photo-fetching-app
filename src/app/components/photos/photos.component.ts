@@ -9,9 +9,10 @@ import { PhotosService } from '../../photos.service';
   styleUrl: './photos.component.css',
 })
 export class PhotosComponent {
+  photoUrl!: string;
   constructor(private photosService: PhotosService) {
     this.photosService.getPhoto().subscribe((res) => {
-      console.log(res);
+      this.photoUrl = res.urls.regular;
     });
   }
 }
