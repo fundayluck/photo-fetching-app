@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PhotosService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getPhoto() {
+    return this.http.get('https://api.unsplash.com/photos/random', {
+      headers: {
+        Authorization: 'Client-ID qHGF-gDUiPSshGi9eYkdp7l5QzSu3prr-sFndosRhZU',
+      },
+    });
+  }
 }
