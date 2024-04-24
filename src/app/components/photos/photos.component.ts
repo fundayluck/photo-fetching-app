@@ -10,6 +10,8 @@ import { PhotosService } from '../../photos.service';
 })
 export class PhotosComponent {
   constructor(private photosService: PhotosService) {
-    this.photosService.getPhoto().subscribe(() => {});
+    this.photosService.getPhoto().subscribe((res) => {
+      console.log(res);
+    });
   }
 }
